@@ -1,0 +1,293 @@
+$Alata: "Alata", sans-serif;
+$JosefinSans: "Josefin Sans", sans-serif;
+
+:root {
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+  --dark-gray: hsl(0, 0%, 55%);
+  --very-dark-gray: hsl(0, 0%, 41%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 15px;
+  font-family: $Alata;
+
+  section {
+    height: 100vh;
+  }
+
+  #front-page {
+    height: 100vh;
+    position: relative;
+    color: var(--white);
+    padding: 3% 5%;
+
+    // add this to only blur the background image but not the content
+    &::before {
+      content: "";
+      background-image: url(./images/desktop/image-hero.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      filter: brightness(0.7);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+
+      #logo {
+        background-image: url(./images/logo.svg);
+        width: 13rem;
+        height: 5rem;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+
+      #nav-items-container {
+        display: flex;
+
+        .nav-item {
+          margin: 0 1rem
+        }
+      }
+    }
+
+    #front-page-text {
+      width: fit-content;
+      max-width: 660px;
+      height: fit-content;
+      margin-top: 20%;
+      border: 2px solid var(--white);
+      padding: 2rem;
+
+      p {
+        font-size: 5rem;
+        text-transform: uppercase;
+        font-family: $JosefinSans;
+        font-weight: 200;
+      }
+    }
+
+  }
+
+  #second-page {
+    padding: 5rem 10rem !important;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+
+    #second-page-image-container {
+      margin-top: 10%;
+      width: 70%;
+      min-width: 30rem;
+      max-width: 70rem;
+
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    #second-page-content {
+      width: 50%;
+      height: fit-content;
+      max-height: 30%;
+      background-color: var(--white);
+      position: absolute;
+      top: min(60%, 30rem);
+      left: 40%;
+      padding: 5rem;
+      padding-right: 0;
+
+      h1 {
+        font-weight: 300;
+        font-family: $JosefinSans;
+        text-transform: uppercase;
+        font-size: 3rem;
+      }
+
+      p {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  #third-page {
+    width: 100%;
+
+    #third-page-header {
+      display: flex;
+      padding: 3rem 0;
+      justify-content: space-between;
+      align-items: center;
+
+      h1 {
+        font-family: $JosefinSans;
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        font-weight: 350;
+      }
+
+      #see-all-button {
+        text-transform: uppercase;
+        font-size: 1rem;
+        font-family: $JosefinSans;
+        font-weight: 350;
+        height: fit-content;
+        border: 1px solid var(--black);
+        text-align: center;
+        padding: 0.5rem 1.5rem;
+        border-radius: 3px;
+        box-shadow: 0 0 0 1px gray;
+      }
+    }
+
+    #third-page-grid {
+      width: 100%;
+      height: 80%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 1.5rem;
+      padding-bottom: 2rem;
+    }
+
+    .third-page-grid-item {
+      background-size: cover;
+      width: 100%;
+      height: 100%;
+      padding: 2rem;
+      position: relative;
+
+      p {
+        color: var(--white);
+        position: absolute;
+        bottom: 2rem;
+        font-family: $JosefinSans;
+        text-transform: uppercase;
+        font-size: 1.3rem;
+        font-weight: 200;
+      }
+    }
+
+    #grid-item-1 {
+      background-image: url(./images/desktop/image-deep-earth.jpg);
+    }
+
+    #grid-item-2 {
+      background-image: url(./images/desktop/image-night-arcade.jpg);
+    }
+
+    #grid-item-3 {
+      background-image: url(./images/desktop/image-soccer-team.jpg);
+    }
+
+    #grid-item-4 {
+      background-image: url(./images/desktop/image-grid.jpg);
+    }
+
+    #grid-item-5 {
+      background-image: url(./images/desktop/image-from-above.jpg);
+    }
+
+    #grid-item-6 {
+      background-image: url(./images/desktop/image-pocket-borealis.jpg);
+    }
+
+    #grid-item-7 {
+      background-image: url(./images/desktop/image-curiosity.jpg);
+    }
+
+    #grid-item-8 {
+      background-image: url(./images/desktop/image-fisheye.jpg);
+    }
+  }
+}
+
+#second-page,
+#third-page,
+footer {
+  padding: 0rem 10rem;
+}
+
+footer {
+  padding: 2rem 10rem;
+  background-color: var(--black);
+  color: var(--white);
+
+  #footer-level-1 {
+    display: flex;
+    justify-content: space-between;
+
+    #footer-logo {
+      background-image: url(./images/logo.svg);
+      width: 100px;
+      height: 50px;
+      background-color: black;
+      background-repeat: no-repeat;
+    }
+
+    #social-media-icons {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 15%;
+
+      .social-media-icon {
+        width: 20px;
+        height: 20px;
+        background-color: black;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      #social-media-icon-1 {
+        background-image: url(./images/icon-facebook.svg);
+      }
+
+      #social-media-icon-2 {
+        background-image: url(./images/icon-twitter.svg);
+      }
+
+      #social-media-icon-3 {
+        background-image: url(./images/icon-pinterest.svg);
+      }
+
+      #social-media-icon-4 {
+        background-image: url(./images/icon-instagram.svg);
+      }
+    }
+
+  }
+
+  #footer-level-2 {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+
+    #footer-level-2-left {
+      display: flex;
+      justify-content: space-between;
+      width: 35%;
+    }
+
+    #footer-level-2-right {
+      opacity: 0.5;
+    }
+  }
+}
