@@ -248,4 +248,23 @@ footer #footer-level-2 #footer-level-2-left {
 }
 footer #footer-level-2 #footer-level-2-right {
   opacity: 0.5;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  #second-page,
+  #third-page,
+  footer {
+    padding: 0rem 3rem;
+  }
+  footer {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  #third-page #third-page-header #third-page-title h1 {
+    font-size: 3rem !important;
+  }
+  #third-page #third-page-grid {
+    padding-top: 15%;
+    height: 75% !important;
+  }
 }/*# sourceMappingURL=style.css.map */
