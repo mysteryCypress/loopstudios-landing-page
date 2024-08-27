@@ -43,21 +43,24 @@
           });
         });
 
-        const gridItems = document.querySelectorAll(".third-page-grid-item");
-        gridItems.forEach((item) => {
-          item.addEventListener("mouseover", () => {
-            // smooth transition
-            item.style.transition = "opacity 0.5s";
+        // only add if media=(min-width: 767px)
+        if (window.matchMedia("(min-width: 767px)").matches) {
+          const gridItems = document.querySelectorAll(".third-page-grid-item");
+          gridItems.forEach((item) => {
+            item.addEventListener("mouseover", () => {
+              // smooth transition
+              item.style.transition = "opacity 0.5s";
 
-            item.style.opacity = "0.5";
+              item.style.opacity = "0.5";
+            });
           });
-        });
-        gridItems.forEach((item) => {
-          item.addEventListener("mouseout", () => {
-            item.style.transition = "opacity 0.5s";
-            item.style.opacity = "1";
+          gridItems.forEach((item) => {
+            item.addEventListener("mouseout", () => {
+              item.style.transition = "opacity 0.5s";
+              item.style.opacity = "1";
+            });
           });
-        });
+        }
 
       })
     </script>
